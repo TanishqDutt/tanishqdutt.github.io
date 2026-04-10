@@ -190,6 +190,7 @@ body{
     /* border-radius: 10px; */
 
     flex-wrap: nowrap;
+    font-family: "Roboto", sans-serif;
 }
 
 ::-webkit-scrollbar{
