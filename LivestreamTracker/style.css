@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=BJ+Cree:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: "Roboto", sans-serif; */
+    /*  */
+}
+
+:root{
+    --bg1: #0f1f04;
+    --bar-color: #00c327;
+    --bar-hover: rgb(73, 165, 43);
+    --bar-shadow:#005912;
+    --divider: rgb(190, 255, 144);
+    --purple1: var(--bg1);
+    --purple2: var(--purple1);
+    --yellow1: #EEA727;
+    --yellow2: var(--bar-color);
+
+}
+
+body{
+    background-color: rgb(65, 46, 21);
+}
+
+.full{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-flow: column;
+}
+
+.title{
+    background-color: var(--purple2);
+    height: 30%;
+    width: 100%;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color:var(--bar-color);
+    font-family: "Cormorant SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 70px;
+    text-shadow:3px 3px var(--bar-shadow),
+                2px 2px var(--bar-shadow),
+                1px 1px var(--bar-shadow),
+                0px 5px 20px rgba(0, 0, 0, 0.5);
+    flex-flow: column;
+}
+.title #subtitle{
+    font-size: 30px;
+}
+.footer{
+    background-color: var(--bg1);
+    height: 10%;
+    color: var(--divider);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+
+}
+.graph{
+    background-color: var(--purple1);
+    color: var(--divider);
+    /* color: var(--bar-color); */
+    height:60%;
+    position: relative;
+    
+}
+.graph .elements{
+    position: relative;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+    overflow-x:scroll;
+    overflow-y: hidden;
+    flex-flow:row;
+    padding: 20px;
+    padding-bottom: 10px;
+    z-index: 4;
+}
+.graph .elements .monthSection{
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex-flow: row;
+    align-items:flex-end;
+    box-sizing: border-box;
+    border-right: var(--divider) 2px dashed;
+}
+.bar{
+    height: 0%;
+    width: 12px;
+    margin-right: 3.5px;
+    margin-left: 3.5px;
+    background-color: var(--yellow2);
+    box-shadow:3px 0px var(--bar-shadow),
+                0px 5px 20px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    border-radius: 30px;
+    transition: 0.5s;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 3;
+}
+            
+.bar:hover{
+    background-color: var(--bar-hover);
+}
+
+.bar .date{
+    color: rgb(164, 78, 78);
+    font-size: 10px;
+    transform: translateY(10px);
+}
+
+.graph .background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background-color: rgba(127, 255, 212, 0.259); */
+    z-index: 0;
+}
+
+.graph .background .line{
+    position: absolute;
+    width: 100%;
+    height:2px;
+    /* background-color: black; */
+    border: 0px;
+    border-top: 2px;
+    border-color: var(--divider);
+    border-style: dashed;
+    
+}
+.graph .background .line.max{
+    bottom:calc( (100% - 40px) + 20px);
+}
+
+.graph .background .line.mid{
+    bottom: calc(0.5 * (100% - 40px) + 20px);
+}
+
+.elements .monthSection .monthSectionBack{
+    position: absolute;
+    /* width: 100%; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 70px;
+    text-align: center;
+    z-index: 2;
+    color:var(--bar-color);
+    background-color: var(--purple1);
+    text-shadow:3px 0px var(--bar-shadow),
+                0px 5px 20px rgba(0, 0, 0, 0.5);
+    font-family: "BJ Cree", serif;
+    font-weight: 500;
+    font-style: normal;
+    /* background-color: transparent; */
+    /* transform: translate(20px,10px,10); */
+    translate: 0 -10px;
+}
+
+.tooltip{
+    display:none;
+    position:fixed;
+    /* height: 200px; */
+    /* width: 200px; */
+    background-color: rgb(0, 33, 13);
+    color:white;
+    top: 0;
+    z-index: 10;
+    pointer-events: none;
+    list-style: none;
+    flex-direction: column;
+    font-size: 14px;
+    padding: 14px;
+    /* padding: ; */
+    gap: 7px;
+    /* border-radius: 10px; */
+
+    flex-wrap: nowrap;
+}
+
+::-webkit-scrollbar{
+    background-color: var(--bg1);
+    height: 5px;
+    /* width: px; */
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--divider);
+    height: 100%;
+    border-radius: 10px;
+
+
+}

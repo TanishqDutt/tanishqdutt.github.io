@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracker</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=BJ+Cree:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="full">
+
+        <section class="title">
+            <div id="title">
+                Avengers Doomsday
+            </div>
+            <div id="subtitle">
+                Livestream Tracker
+            </div>
+        </section>
+        <section class="graph">
+            <div class="background">
+                <div class="line max" id="max-line">1000</div>
+                <div class="line mid" id="mid-line">500</div>
+            </div>
+            <div class="elements">
+                <!-- this is syntax of how bars are stored in html -->
+                <!-- <div class="bar" value="999" date="4" month="5"><span class="date">999</span></div>
+                <div class="bar" value="836" date="9" month="10"><span class="date">836</span></div> -->
+            </div>
+            <div class="tooltip">
+                <li>Date: <span id="tooltip-date">14th March</span></li>
+                <li>Number of Views: <span id="tooltip-views">159</span></li>
+                <li>Likes Gained: <span id="tooltip-likes">100</span></li>
+            </div>
+        </section>
+        <section class="footer"><p>made by <i>'<b>Tanishq</b>'</i></p></section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
